@@ -62,49 +62,10 @@
   color: var(--service-muted);
   font-size: 0.85rem;
 }
-.review-table-frame {
-  border: 1px solid var(--service-rule);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.journal-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.925rem;
-}
-.journal-table th,
-.journal-table td {
-  padding: 0.8rem 1rem;
-}
-.journal-table thead th {
-  background: #f0f5f2;
+.conference-count-note {
+  margin: 0 0 0.85rem;
   color: var(--service-muted);
-  font-size: 0.8rem;
-  text-align: start;
-}
-.journal-table tbody th {
-  font-weight: 650;
-  text-align: start;
-}
-.journal-table tbody tr {
-  border-top: 1px solid var(--service-rule);
-}
-.journal-table :is(th:last-child, td:last-child) {
-  width: 6.5rem;
-  text-align: end;
-  white-space: nowrap;
-}
-.journal-table td {
-  color: var(--service-accent);
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-}
-.journal-date {
-  display: block;
-  margin-top: 0.15rem;
-  color: var(--service-muted);
-  font-size: 0.76rem;
-  font-weight: 400;
+  font-size: 0.84rem;
 }
 .service-profile-links {
   display: flex;
@@ -114,13 +75,13 @@
   margin: 0.8rem 0 0;
   padding: 0;
 }
-.conference-records {
+.service-records {
   padding: 0;
   margin: 0;
   list-style: none;
   border-top: 1px solid var(--service-rule);
 }
-.conference-records li, .chair-record {
+.service-records li, .chair-record {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 1rem;
@@ -128,19 +89,19 @@
   padding: 0.95rem 0;
   border-bottom: 1px solid var(--service-rule);
 }
-.conference-records h3, .chair-record h3 {
+.service-records h3, .chair-record h3 {
   margin: 0 0 0.2rem;
   font-size: 0.98rem;
 }
-.conference-records p, .chair-record p {
+.service-records p, .chair-record p {
   margin: 0;
   color: var(--service-muted);
   font-size: 0.84rem;
 }
-.conference-role, .chair-date {
+.service-record-meta, .chair-date {
   text-align: end;
 }
-.conference-role > span {
+.service-record-meta > span {
   color: var(--service-accent);
   font-size: 0.84rem;
   font-weight: 650;
@@ -158,17 +119,11 @@
   .service-metrics dt {
     font-size: 0.7rem;
   }
-  .journal-table th, .journal-table td {
-    padding: 0.7rem 0.6rem;
-  }
-  .journal-table :is(th:last-child, td:last-child) {
-    width: auto;
-  }
-  .conference-records li, .chair-record {
+  .service-records li, .chair-record {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.35rem;
   }
-  .conference-role, .chair-date {
+  .service-record-meta, .chair-date {
     text-align: start;
   }
 }
