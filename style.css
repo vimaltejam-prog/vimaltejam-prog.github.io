@@ -197,3 +197,23 @@
     padding-left: 1.55rem;
   }
 }
+
+.home-intro {
+  padding-bottom: 1.5rem;
+}
+.payment-impact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+.payment-impact-grid .focus-card h3 {
+  margin-top: 0;
+}
+.homepage-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+@media (max-width: 760px) {
+  .payment-impact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
