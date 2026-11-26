@@ -1,0 +1,38 @@
+name: Refresh Google Scholar citations
+
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scholar-metrics
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Fetch the public citation table
+        run: python3 .github/scripts/scholar_metrics.py > "$RUNNER_TEMP/scholar-metrics.json"
+      - name: Publish changed counts
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin scholar-metrics
+          git switch --detach FETCH_HEAD
+          snapshot="$RUNNER_TEMP/scholar-metrics.json"
+          if python3 -c 'import json,sys; sys.exit(json.load(open(sys.argv[1]))["metrics"] != json.load(open(sys.argv[2]))["metrics"])' scholar-metrics.json "$snapshot"; then
+            exit 0
+          fi
+          cp "$snapshot" scholar-metrics.json
+          git add scholar-metrics.json
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh Google Scholar citation metrics'
+          git push origin HEAD:scholar-metrics
