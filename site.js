@@ -1,0 +1,5 @@
+const menuButton=document.querySelector('.menu-toggle');
+const nav=document.querySelector('#main-nav');
+menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open)});
+const search=document.querySelector('#publication-search');
+if(search){let filter='all';const papers=[...document.querySelectorAll('.publication')];const buttons=[...document.querySelectorAll('[data-filter]')];function update(){const q=search.value.trim().toLocaleLowerCase();let count=0;for(const p of papers){const show=(filter==='all'||p.dataset.type===filter)&&p.dataset.search.includes(q);p.hidden=!show;if(show)count++}document.querySelector('#results-count').textContent=`${count} ${count===1?'work':'works'}`;document.querySelector('#no-results').hidden=count!==0}search.addEventListener('input',update);for(const button of buttons)button.addEventListener('click',()=>{filter=button.dataset.filter;buttons.forEach(b=>{const selected=b===button;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected))});update()});}
