@@ -1,0 +1,36 @@
+.profile-links li {
+  margin: 5px 0;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  max-width: none;
+  width: fit-content;
+  min-height: 32px;
+}
+
+.profile-links a img {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.profile-links a .profile-link-label {
+  display: inline;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .profile-links {
+    gap: 2px 1rem;
+  }
+
+  .profile-links li {
+    margin: 0;
+    font-size: 0.75rem;
+  }
+}

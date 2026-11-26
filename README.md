@@ -9,3 +9,5 @@ Website: https://vimaltejam-prog.github.io/
 This is a static website. Edit the HTML pages, `style.css`, and `site.js` directly. GitHub Pages serves the root of the `main` branch. The `.nojekyll` file keeps the supplied HTML and assets unchanged.
 
 The layout adapts the supplied Academic Pages portfolio template. Its original MIT license is preserved in LICENSE.
+
+Profile icons: Google Scholar, ORCID, and Clarivate marks from [Simple Icons](https://simpleicons.org/) (CC0); LinkedIn and envelope icons from [Font Awesome Free 6.7.2](https://fontawesome.com/) ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Colors were adapted for the portfolio.
