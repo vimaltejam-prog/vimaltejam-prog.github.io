@@ -217,3 +217,7 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.payment-impact-single {
+  grid-template-columns: minmax(0, 1fr);
+}
