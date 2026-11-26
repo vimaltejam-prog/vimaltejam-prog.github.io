@@ -198,26 +198,33 @@
   }
 }
 
-.home-intro {
-  padding-bottom: 1.5rem;
+.homepage-impact {
+  margin: 0 0 2.5rem;
+  border-inline-start: 3px solid var(--portfolio-accent);
 }
-.payment-impact-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin: 0;
+.homepage-impact h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.6rem;
 }
-.payment-impact-grid .focus-card h3 {
-  margin-top: 0;
+.template-index a {
+  grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr) auto;
+  align-items: baseline;
 }
-.homepage-links {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+.template-index a > strong {
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+.template-index a:hover > strong,
+.template-index a:focus-visible > strong {
+  text-decoration: underline;
 }
 @media (max-width: 760px) {
-  .payment-impact-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .template-index a {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 0.35rem;
   }
-}
-
-.payment-impact-single {
-  grid-template-columns: minmax(0, 1fr);
+  .template-index a > strong {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }
